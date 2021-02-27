@@ -12,4 +12,5 @@ export class DataTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
