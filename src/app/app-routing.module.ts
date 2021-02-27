@@ -6,7 +6,7 @@ import { DataTableComponent } from './components/data-table/data-table.component
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'assign/course/to/user', component: AssignCourseToUserComponent },
+  { path: 'assign/:user', component: AssignCourseToUserComponent },
   { path: 'addCourses', component: AddCoursesComponent },
   { path: 'showAllCourses', component: DataTableComponent },
   { path: '', redirectTo: '/showAllCourses', pathMatch: 'full'  },
