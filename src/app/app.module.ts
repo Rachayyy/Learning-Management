@@ -11,6 +11,7 @@ import { AssignCourseToUserComponent } from './components/assign-course-to-user/
 import { AddCoursesComponent } from './components/add-courses/add-courses.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
     AssignCourseToUserComponent,
     AddCoursesComponent,
     SidebarComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
