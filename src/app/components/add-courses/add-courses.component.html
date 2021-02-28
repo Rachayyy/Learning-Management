@@ -6,26 +6,37 @@
             </div>
         </div>
         <div class="container">
-            <form action="" id="ch">
+            
+            <form action="" #courseForm="ngForm" (ngSubmit)="!courseForm.invalid && addNewCourse()">
+                <div class="form-group">
+                    <label for="courseId">Course ID:</label>
+                    <input type="text" class="form-control" id="courseId" placeholder="Enter course id" name="courseId"
+                        required="required" [(ngModel)]="course.courseId" #courseId="ngModel">
+                    
+                </div>
+                
                 <div class="form-group">
                     <label for="code">New Course Code:</label>
                     <input type="text" class="form-control" id="code" placeholder="Enter course code" name="code"
-                        required>
+                        required="required" [(ngModel)]="course.courseCode" #code="ngModel">
+                    <div [hidden]="code.valid || code.pristine" class="alert alert-danger">Subject code is required</div>
 
                 </div>
                 <div class="form-group">
                     <label for="username">New Course Name:</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter course name" name="name"
-                        required>
-
+                        required="required" [(ngModel)]="course.courseName" #name="ngModel">
+                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Course name is required</div>
                 </div>
 
                 <div class="form-group">
-                    <label for="formFileLg" class="form-label">Upload Document</label>
-                    <input class="form-control form-control-lg" id="formFileLg" type="file" />
+                    <label for="formFile" class="form-label">Upload Document</label>
+                    <input class="form-control form-control-lg" id="formFile" type="file"  name="formFile" required ng2FileSelect
+                        [uploader]="course.document" ngModel  />
                 </div>
-                <button type="submit" class="btn btn-primary">Add Course</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!courseForm.form.valid">Add Course</button>
             </form>
+
         </div>
     </div>
 </div>
