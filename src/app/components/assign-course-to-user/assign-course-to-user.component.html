@@ -6,26 +6,25 @@
             </div>
         </div>
         <div class="container">
-            <form action="" id="ch">
+            <form action="" #userForm="ngForm" (ngSubmit)="!userForm.invalid && assignCourse()">
                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"
-                        required>
+                        required="required" [(ngModel)]="user.userName" #uname="ngModel">
+                    <div class="alert alert-danger" [hidden]="uname.valid || uname.pristine">Please enter username</div>
 
                 </div>
                 <div class="form-group">
                     <label for="course">Course Codes:</label>
-                    <select class="form-control" id="course">
-                        <option selected>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                    <select class="form-control" id="course" name="course" [(ngModel)]="courseCode" #course="ngModel">
+                        <option *ngFor="let c of courses"  [value]="c">{{c}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="name">Course Name:</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter course name" name="name"
-                        required>
+                        required [(ngModel)]="courseName" #cName="ngModel">
+                        <div class="alert alert-danger" [hidden]="cName.valid || cName.pristine">Please enter Course Name</div>
 
                 </div>
                 <button type="submit" class="btn btn-primary">Assign</button>
