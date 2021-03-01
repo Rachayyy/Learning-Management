@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Clone repository using git :-
+
+1. Choose folder in your local computer.
+2. Move to this folder in cmd prompt.
+1. git clone "Repository URL(HTTP)"
+
+## Running this projct for the first time after cloning:- 
+
+1. run "npm i"
+2. run "ng serve"
+
+
