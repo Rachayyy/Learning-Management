@@ -13,6 +13,9 @@ import { AddCoursesComponent } from './components/add-courses/add-courses.compon
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LoginComponent } from './components/login/login.component';
+import { FeaturesComponent } from './components/features/features.component';
+import { CompanyComponent } from './components/company/company.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     AddCoursesComponent,
     SidebarComponent,
     MenuBarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent,
+    FeaturesComponent,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,
