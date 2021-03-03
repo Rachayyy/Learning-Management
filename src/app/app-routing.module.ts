@@ -9,10 +9,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { CompanyComponent } from './components/company/company.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-<<<<<<< HEAD
-=======
 import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
->>>>>>> 924a5bbaed832e4e12cb738e61ad15c597c09d77
 import { UsersComponent } from './components/users/users.component';
 import { CreditLogsComponent } from './components/credit-logs/credit-logs.component';
 
