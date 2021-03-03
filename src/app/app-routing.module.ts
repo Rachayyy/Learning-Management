@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'showAllCourses', component: DataTableComponent },
   { path: 'login', component: LoginComponent },
   { path: 'features', component: FeaturesComponent },
-  { path: 'Company', component: CompanyComponent },
+  { path: 'company', component: CompanyComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'  },
