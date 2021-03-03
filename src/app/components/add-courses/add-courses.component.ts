@@ -8,8 +8,8 @@ export class Course {
 
   constructor (
     public courseId: number,
-    public courseName: string,
     public courseCode: number,
+    public courseName: string,
     public document: FileUploader
   ) {}
 }
@@ -28,13 +28,15 @@ export class AddCoursesComponent implements OnInit {
   courseId: number = 1;
   courseName: string = "Aashray";
   courseCode: number = 101;
-  document: FileUploader = new FileUploader({
-    url: "",
-    removeAfterUpload: false,
-    autoUpload: true
-  });
+  // document: FileUploader = new FileUploader({
+  //   url: "",
+  //   removeAfterUpload: false,
+  //   autoUpload: true
+  // });
+
+  document: any = null;
   
-  course: Course = new Course(this.courseId, this.courseName, this.courseCode, this.document);
+  course: Course = new Course(this.courseId, this.courseCode, this.courseName,  this.document);
 
   ngOnInit(): void {
     console.log("inside addcourse");
@@ -42,7 +44,15 @@ export class AddCoursesComponent implements OnInit {
   }
 
   public addNewCourse() {
-    console.log(this.course.courseId + " " + this.course.courseCode + " " + this.course.courseName + " " + this.course.document)
+    // console.log(this.course.courseId + " " + this.course.courseCode + " " + this.course.courseName + " " + this.course.document)
+    this.httpService.create(this.course).subscribe(
+      response => {
+        console.log(response);
+      }, 
+      error => {
+        console.log(error);
+      }
+    )
   }
 
 }
