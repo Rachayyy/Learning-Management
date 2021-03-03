@@ -10,6 +10,7 @@ import { CompanyComponent } from './components/company/company.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UsersComponent } from './components/users/users.component';
+import { CreditLogsComponent } from './components/credit-logs/credit-logs.component';
 
 const routes: Routes = [
   { path: 'assign/:user', component: AssignCourseToUserComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'credit', component: CreditLogsComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'  },
   { path: '**', component: PageNotFoundComponent }
 ];

@@ -19,6 +19,7 @@ import { CompanyComponent } from './components/company/company.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UsersComponent } from './components/users/users.component';
+import { CreditLogsComponent } from './components/credit-logs/credit-logs.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UsersComponent } from './components/users/users.component';
     CompanyComponent,
     RegistrationComponent,
     DashboardComponent,
-    UsersComponent
+    UsersComponent,
+    CreditLogsComponent
   ],
   imports: [
     BrowserModule,
