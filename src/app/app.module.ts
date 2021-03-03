@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { LoginComponent } from './components/login/login.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { CompanyComponent } from './components/company/company.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CompanyComponent } from './components/company/company.component';
     PageNotFoundComponent,
     LoginComponent,
     FeaturesComponent,
-    CompanyComponent
+    CompanyComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
