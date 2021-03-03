@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { CompanyComponent } from './components/company/company.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'assign/:user', component: AssignCourseToUserComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'features', component: FeaturesComponent },
   { path: 'Company', component: CompanyComponent },
   { path: 'registration', component: RegistrationComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'  },
   { path: '**', component: PageNotFoundComponent }
 ];
