@@ -37,8 +37,9 @@
 
                 <div class="form-group">
                     <label for="formFile" class="form-label">Upload Document</label>
-                    <input class="form-control form-control-lg" id="formFile" type="file"  name="formFile" required ng2FileSelect
-                        [uploader]="course.document" ngModel  />
+                    <input class="form-control form-control-lg" id="formFile" type="file"  name="formFile" #document="ngModel" required  [(ngModel)]="course.document"  />
+                    <!-- ng2FileSelect -->
+                        <!-- [uploader]="course.document" -->
                 </div>
                 <button type="submit" class="btn btn-primary" [disabled]="!courseForm.form.valid">Add Course</button>&nbsp;&nbsp;
                 <button routerLink="/showAllCourses" class="btn btn-primary">Back</button>
