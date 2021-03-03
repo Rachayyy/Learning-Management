@@ -9,6 +9,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { CompanyComponent } from './components/company/company.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
 
 const routes: Routes = [
   { path: 'assign/:user', component: AssignCourseToUserComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'company', component: CompanyComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'userdashboard', component: UserdashboardComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'  },
   { path: '**', component: PageNotFoundComponent }
 ];

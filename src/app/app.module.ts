@@ -18,6 +18,8 @@ import { FeaturesComponent } from './components/features/features.component';
 import { CompanyComponent } from './components/company/company.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
+import { UsersidebarComponent } from './components/usersidebar/usersidebar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     FeaturesComponent,
     CompanyComponent,
     RegistrationComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserdashboardComponent,
+    UsersidebarComponent
   ],
   imports: [
     BrowserModule,
