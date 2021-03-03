@@ -34,7 +34,8 @@
                     <input class="form-control form-control-lg" id="formFile" type="file"  name="formFile" required ng2FileSelect
                         [uploader]="course.document" ngModel  />
                 </div>
-                <button type="submit" class="btn btn-primary" [disabled]="!courseForm.form.valid">Add Course</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!courseForm.form.valid">Add Course</button>&nbsp;&nbsp;
+                <button routerLink="/dashboard" class="btn btn-primary">Back</button>
             </form>
 
         </div>
