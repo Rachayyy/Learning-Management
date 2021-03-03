@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   }
    
   LoginUser(){
+    console.log(this.userName + " " + this.pass + " " + this.value)
     if (this.value == "admin"){
      if(this.userName == "Admin" && this.pass == "1234"){
         alert('login successful!!');

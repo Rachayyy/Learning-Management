@@ -1,29 +1,39 @@
 <div class="panel panel-default">
     <div class="panel-body">
-<h3> Login</h3>
-<div class="container">
-<form action="" >
-     <div class="form-group">
-        <input type="radio" name="r1" value="admin" [(ngModel)]="value" (change) = "onItemChange($event.target.value)">Admin &nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="r1" value="user" [(ngModel)]="value" (change) = "onItemChange($event.target.value)">User 
-    </div> 
-    <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" class="form-control" id="username" placeholder="Enter username" name="userName"
-         [(ngModel)]="userName">
+        <h3> Login</h3>
+        <div class="container">
+            <form action="" #loginForm (ngSubmit)="!loginForm.invalid && LoginUser()">
+
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="userName"
+                        [(ngModel)]="userName" #user="ngModel" required>
+                    <div class="alert alert-danger" [hidden]="user.valid || user.pristine">Please enter username</div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" placeholder="Enter password here" name="pass"
+                        [(ngModel)]="pass" #password="ngModel" required />
+                    <div class="alert alert-danger" [hidden]="password.valid || password.pristine">Invalid Password
+                    </div>
+                </div>
+
+                <div class="form-group" name="r1">
+                    <label for="rad">User Type: </label>
+                    <input type="radio" name="r1" id="rad" value="admin" [(ngModel)]="value">Admin
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <input type="radio" name="r1" id="rad" value="user" [(ngModel)]="value">User
+
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">
+                        Login
+                    </button>
+                    <a routerLink='/registration'>Register</a>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control"  placeholder="Enter password here" name = "pass" [(ngModel)]="pass"/>
-    </div>
-    
-    <div class="form-group">
-    <button class="btn btn-primary"  (click) = "LoginUser()">
-    Login
-    </button>
-    <a routerLink='/registration'>Register</a>
-    </div>
-</form>
-</div>
-</div>
 </div>
