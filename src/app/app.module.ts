@@ -22,6 +22,7 @@ import { UserdashboardComponent } from './components/userdashboard/userdashboard
 import { UsersidebarComponent } from './components/usersidebar/usersidebar.component';
 import { UsersComponent } from './components/users/users.component';
 import { CreditLogsComponent } from './components/credit-logs/credit-logs.component';
+import { MycoursesComponent } from './components/mycourses/mycourses.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CreditLogsComponent } from './components/credit-logs/credit-logs.compon
     UserdashboardComponent,
     UsersidebarComponent,
     UsersComponent,
-    CreditLogsComponent
+    CreditLogsComponent,
+    MycoursesComponent
   ],
   imports: [
     BrowserModule,
