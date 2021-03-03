@@ -1,3 +1,9 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid">
+    <div class="row"> 
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
+            <app-sidebar></app-sidebar>
+
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="container" id="ch">
@@ -35,9 +41,13 @@
                         [uploader]="course.document" ngModel  />
                 </div>
                 <button type="submit" class="btn btn-primary" [disabled]="!courseForm.form.valid">Add Course</button>&nbsp;&nbsp;
-                <button routerLink="/dashboard" class="btn btn-primary">Back</button>
+                <button routerLink="/showAllCourses" class="btn btn-primary">Back</button>
             </form>
 
         </div>
     </div>
+</div>
+<router-outlet></router-outlet>
+</div>
+</div>
 </div>

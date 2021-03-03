@@ -18,8 +18,13 @@ import { FeaturesComponent } from './components/features/features.component';
 import { CompanyComponent } from './components/company/company.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+<<<<<<< HEAD
 import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
 import { UsersidebarComponent } from './components/usersidebar/usersidebar.component';
+=======
+import { UsersComponent } from './components/users/users.component';
+import { CreditLogsComponent } from './components/credit-logs/credit-logs.component';
+>>>>>>> d6e231f5b0f0e8443a00fa0ab24977a86f272168
 
 @NgModule({
   declarations: [
@@ -36,8 +41,13 @@ import { UsersidebarComponent } from './components/usersidebar/usersidebar.compo
     CompanyComponent,
     RegistrationComponent,
     DashboardComponent,
+<<<<<<< HEAD
     UserdashboardComponent,
     UsersidebarComponent
+=======
+    UsersComponent,
+    CreditLogsComponent
+>>>>>>> d6e231f5b0f0e8443a00fa0ab24977a86f272168
   ],
   imports: [
     BrowserModule,
