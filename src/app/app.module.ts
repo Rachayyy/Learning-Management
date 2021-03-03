@@ -18,6 +18,8 @@ import { FeaturesComponent } from './components/features/features.component';
 import { CompanyComponent } from './components/company/company.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
+import { UsersidebarComponent } from './components/usersidebar/usersidebar.component';
 import { UsersComponent } from './components/users/users.component';
 import { CreditLogsComponent } from './components/credit-logs/credit-logs.component';
 
@@ -36,6 +38,8 @@ import { CreditLogsComponent } from './components/credit-logs/credit-logs.compon
     CompanyComponent,
     RegistrationComponent,
     DashboardComponent,
+    UserdashboardComponent,
+    UsersidebarComponent,
     UsersComponent,
     CreditLogsComponent
   ],
