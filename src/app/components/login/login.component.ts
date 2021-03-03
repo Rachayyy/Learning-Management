@@ -32,7 +32,13 @@ export class LoginComponent implements OnInit {
     }
 
     if(this.value == "user"){
-      
+      if(this.userName == "tcs" && this.pass == "1234"){
+        alert('login successful!!');
+        this.router.navigate(['/userdashboard']);
+     }
+     else{
+      alert('username or password is wrong');
+     }
     }
   }
 
