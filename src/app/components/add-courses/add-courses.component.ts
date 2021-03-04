@@ -10,7 +10,7 @@ export class Course {
     public courseId: number,
     public courseCode: number,
     public courseName: string,
-    public document: FileUploader
+    public document: File
   ) {}
 }
 
@@ -28,31 +28,48 @@ export class AddCoursesComponent implements OnInit {
   courseId: number = 1;
   courseName: string = "Aashray";
   courseCode: number = 101;
+  document: File = null;
+  isAdded: boolean = false;
+  iserror: boolean = false;
   // document: FileUploader = new FileUploader({
   //   url: "",
   //   removeAfterUpload: false,
   //   autoUpload: true
   // });
 
-  document: any = null;
   
   course: Course = new Course(this.courseId, this.courseCode, this.courseName,  this.document);
 
   ngOnInit(): void {
     console.log("inside addcourse");
-    
+    this.isAdded = false;
+    this.iserror = false;
   }
 
   public addNewCourse() {
     // console.log(this.course.courseId + " " + this.course.courseCode + " " + this.course.courseName + " " + this.course.document)
     this.httpService.create(this.course).subscribe(
       response => {
-        console.log(response);
+        if (response.hasOwnProperty("message")) {
+          this.isAdded = true;
+          this.iserror = false;
+        } else if (response.hasOwnProperty("err")) {
+          this.iserror = true;
+        } else {
+          console.log("no")
+        }
       }, 
       error => {
         console.log(error);
+        this.isAdded = false;
+        console.log("Some error occurred in server");
       }
     )
+  }
+
+  public getFile(file: FileList) {
+    this.course.document = file.item(0);
+    console.log(this.course.document);
   }
 
 }

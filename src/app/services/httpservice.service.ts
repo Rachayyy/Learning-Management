@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Course } from '../components/add-courses/add-courses.component';
 
+
+
 const baseUrl = 'http://localhost:8080';
 
 @Injectable({
@@ -19,11 +21,17 @@ export class HttpserviceService {
     return this.http.get(`${baseUrl}/${username}`);
   }
 
-  public create(data: Course) {
+  public create(data) {
     // console.log(data + " " + (baseUrl+path))
     var path = 'addCourses';
     
-    return this.http.post(`${baseUrl}/${path}`, data);
+    // var formData = new FormData();
+    // formData.append('document', data.document, data.document.name);
+    // data.convertedDocumnet = formData;
+    // console.log(formData);
+    let dataString = JSON.parse(JSON.stringify(data || null));
+
+    return this.http.post(`${baseUrl}/${path}`, dataString)
   }
 
   public update(username: string, data) {
