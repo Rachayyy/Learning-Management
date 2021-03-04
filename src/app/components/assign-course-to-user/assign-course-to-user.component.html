@@ -1,44 +1,52 @@
 <app-nav-bar></app-nav-bar>
 <div class="container-fluid">
-    <div class="row"> 
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
+    <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <app-sidebar></app-sidebar>
-<div class="panel panel-default">
-    <div class="panel-body">
-        <div class="container" id="ch">
-            <div>
-                <h2>Assign Courses To User</h2>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="container" id="ch">
+                        <div>
+                            <h2>Assign Courses To User</h2>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <form action="" #userForm="ngForm" (ngSubmit)="!userForm.invalid && assignCourse()">
+                            <div class="form-group">
+                                <label for="userId">User Id:</label>
+                                <select class="form-control" id="userId" name="userId" [(ngModel)]="userId" (change)="onUserSelected();">
+                                    <option *ngFor="let x of user">{{x.userId}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter username"
+                                    name="username" required="required" [(ngModel)]="userName" #uname="ngModel">
+                                <div class="alert alert-danger" [hidden]="uname.valid || uname.pristine">Please enter
+                                    username</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Course Codes:</label>
+                                <select class="form-control" id="course" name="course" [(ngModel)]="courseCode" (change)="onCourseSelected()">
+                                    <option *ngFor="let temp of course" >{{temp.courseCode}}</option>
+                                </select>
+                                <!-- [ngValue]="temp.courseCode" -->
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Course Name:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter course name"
+                                    name="name" required [(ngModel)]="courseName" #cName="ngModel" value="courseName">
+                                <div class="alert alert-danger" [hidden]="cName.valid || cName.pristine">Please enter
+                                    Course Name</div>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary">Assign</button>&nbsp;&nbsp;
+                            <button routerLink="/showAllCourses" class="btn btn-primary">Back</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="container">
-            <form action="" #userForm="ngForm" (ngSubmit)="!userForm.invalid && assignCourse()">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"
-                        required="required" [(ngModel)]="user.userName" #uname="ngModel">
-                    <div class="alert alert-danger" [hidden]="uname.valid || uname.pristine">Please enter username</div>
-
-                </div>
-                <div class="form-group">
-                    <label for="course">Course Codes:</label>
-                    <select class="form-control" id="course" name="course" [(ngModel)]="courseCode" #course="ngModel">
-                        <option *ngFor="let c of courses"  [value]="c">{{c}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="name">Course Name:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter course name" name="name"
-                        required [(ngModel)]="courseName" #cName="ngModel">
-                        <div class="alert alert-danger" [hidden]="cName.valid || cName.pristine">Please enter Course Name</div>
-
-                </div>
-                <button type="submit" class="btn btn-primary">Assign</button>&nbsp;&nbsp;
-                <button routerLink="/showAllCourses" class="btn btn-primary">Back</button>
-            </form>
+            <router-outlet></router-outlet>
         </div>
     </div>
-</div>
-<router-outlet></router-outlet>
-</div>
-</div>
 </div>

@@ -55,6 +55,7 @@ export class AddCoursesComponent implements OnInit {
           this.iserror = false;
         } else if (response.hasOwnProperty("err")) {
           this.iserror = true;
+          this.isAdded = false;
         } else {
           console.log("no")
         }
