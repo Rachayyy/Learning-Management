@@ -21,7 +21,7 @@
                             <div class="form-group">
                                 <label for="username">Username:</label>
                                 <input type="text" class="form-control" id="username" placeholder="Enter username"
-                                    name="username" required="required" [(ngModel)]="userName" #uname="ngModel">
+                                    name="username" required="required" [(ngModel)]="userName" #uname="ngModel" disabled>
                                 <div class="alert alert-danger" [hidden]="uname.valid || uname.pristine">Please enter
                                     username</div>
                             </div>
@@ -35,13 +35,16 @@
                             <div class="form-group">
                                 <label for="name">Course Name:</label>
                                 <input type="text" class="form-control" id="name" placeholder="Enter course name"
-                                    name="name" required [(ngModel)]="courseName" #cName="ngModel" value="courseName">
+                                    name="name" required [(ngModel)]="courseName" #cName="ngModel" value="courseName" disabled>
                                 <div class="alert alert-danger" [hidden]="cName.valid || cName.pristine">Please enter
                                     Course Name</div>
 
                             </div>
                             <button type="submit" class="btn btn-primary">Assign</button>&nbsp;&nbsp;
                             <button routerLink="/showAllCourses" class="btn btn-primary">Back</button>
+                            <div>
+                                <h5 *ngIf="isAssigned"  class="alert alert-success">{{message}}</h5>
+                            </div>
                         </form>
                     </div>
                 </div>

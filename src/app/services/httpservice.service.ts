@@ -24,12 +24,7 @@ export class HttpserviceService {
     return this.http.get(`${baseUrl}/${username}`);
   }
 
-  public update(username: string, data) {
-    return this.http.put(`${baseUrl}/${username}`, data);
-  }
-
-
-  //Aashray work.(These are working methods. )
+  //Aashray work.(Below are working methods. )
 
   //assign course button
   public getCourse() {
@@ -50,13 +45,18 @@ export class HttpserviceService {
   public create(data) {
     // console.log(data + " " + (baseUrl+path))
     var path = 'addCourses';
-    
     // var formData = new FormData();
     // formData.append('document', data.document, data.document.name);
     // data.convertedDocumnet = formData;
     // console.log(formData);
     let dataString = JSON.parse(JSON.stringify(data || null));
     return this.http.post(`${baseUrl}/${path}`, dataString)
+  }
+
+  public update(data) {
+    var path = 'updateUserCourse'
+    var dataString = JSON.parse(JSON.stringify(data || null));
+    return this.http.put(`${baseUrl}/${path}/${data.userId}/${data.courseCode}`, dataString);
   }
 
   
