@@ -41,16 +41,18 @@ export class AssignCourseToUserComponent implements OnInit {
   public courseName: string = "ABC";
   public courseCode: number = 101
 
-  public userIds: number[] = [
-    1, 2, 3, 4
-  ];
 
   course: Course[] = [];
   user: User[] = [];
+  userCourses: UserCourses;
+
+  isAssigned: boolean = false;
+  message: string = "";
 
   ngOnInit(): void {
     this.getAllCourse();
     this.getAllUser();
+    this.isAssigned = false;
   }
 
   getAllCourse() {
@@ -101,6 +103,13 @@ export class AssignCourseToUserComponent implements OnInit {
 
   assignCourse() {
     // console.log(this.user.userId + " " + this.user.userName + " " + this.user.createDate + " " + this.courseCode + " " + this.courseName)
+    this.userCourses = new UserCourses(this.userId, this.userName, this.courseCode, this.courseName);
+    this.httpService.update(this.userCourses).subscribe(response => {
+      // console.log(response);
+      this.isAssigned = true;
+      this.message = response["message"]
+      console.log(response)
+    })
   }
 
 }
