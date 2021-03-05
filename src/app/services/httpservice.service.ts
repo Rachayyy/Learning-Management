@@ -16,14 +16,6 @@ export class HttpserviceService {
 
   constructor(private http: HttpClient) { }
 
-  public getAll() {
-    return this.http.get(baseUrl);
-  }
-
-  public get(username: string) {
-    return this.http.get(`${baseUrl}/${username}`);
-  }
-
   //use these methods for user and course work
 
   //all course details
@@ -46,7 +38,36 @@ export class HttpserviceService {
     var dataString = JSON.parse(JSON.stringify(data || null));
     return this.http.put(`${baseUrl}/${path}`, dataString);
   }
+  
+  //user methods
+  //get all user details
+  public getAllUserDetails() {
+    var path = 'getAllUserDetails';
+    return this.http.get(`${baseUrl}/${path}`).pipe(map(res => {
+      return res;
+    }))
+  }
 
+  //add new user
+  public addNewUser(data) {
+    var path = 'addNewUser';
+    let dataString = JSON.parse(JSON.stringify(data || null));
+    return this.http.post(`${baseUrl}/${path}`, dataString);
+  }
+
+
+  //delete course from db
+  public deleteUserById(userId) {
+    var path = 'deleteUserById';
+    return this.http.delete(`${baseUrl}/${path}/${userId}`);
+  }
+
+  //editUser
+  public updateUser(data) {
+    var path = 'editUser';
+    var dataString = JSON.parse(JSON.stringify(data || null));
+    return this.http.put(`${baseUrl}/${path}`, dataString);
+  }
 
   //Aashray work.(Below are working methods. )
 
@@ -82,6 +103,8 @@ export class HttpserviceService {
     var dataString = JSON.parse(JSON.stringify(data || null));
     return this.http.put(`${baseUrl}/${path}/${data.userId}/${data.courseCode}`, dataString);
   }
+
+
 
   public validateLogin(data) {
       var path = 'validateLogin';
