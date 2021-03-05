@@ -13,6 +13,8 @@ import { UserdashboardComponent } from './components/userdashboard/userdashboard
 import { UsersComponent } from './components/users/users.component';
 import { CreditLogsComponent } from './components/credit-logs/credit-logs.component';
 import { MycoursesComponent } from './components/mycourses/mycourses.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { ViewUserComponent } from './components/view-user/view-user.component';
 
 const routes: Routes = [
   { path: 'assign/:user', component: AssignCourseToUserComponent },
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'credit', component: CreditLogsComponent },
   { path: 'mycourses', component: MycoursesComponent },
+  { path: 'edituser/:id', component: EditUserComponent },
+  { path: 'viewuser/:id', component: ViewUserComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'  },
   { path: '**', component: PageNotFoundComponent }
 ];

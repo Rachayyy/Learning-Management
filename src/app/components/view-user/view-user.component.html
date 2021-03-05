@@ -14,17 +14,14 @@
             <tr>
                 <th>User Id</th>
                 <th>Name</th>
-                <th>Actions</th>
+                
             </tr>
         </thead>
         <tbody >
             <tr *ngFor="let i of val[0]" [attr.id]="i.userId">
                 <td>{{ i.userId }}</td>
                 <td>{{ i.userName}}</td>
-                <td><button type="button" class="btn-btn-primary"><i class="far fa-eye"><a [routerLink] = "['/viewuser/'+i.userId]">View</a></i></button>
-                    <button type="button" class="btn-btn-success"><i class="far fa-edit"><a [routerLink] = "['/edituser/'+i.userId]" routerLineActive='active' >Edit</a></i></button>
-                    <button type="button" class="btn-btn-danger"><i class="far fa-trash-alt" (click)="deleteRow(i.userId)">Delete</i></button></td>
-            </tr>
+                </tr>
             <!-- <tr>
                 <td>1,002</td>
                 <td>amet</td>
@@ -167,3 +164,4 @@
 </div>
 </div>
 </div>
+

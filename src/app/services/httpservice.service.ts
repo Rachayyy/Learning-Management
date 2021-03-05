@@ -62,14 +62,19 @@ export class HttpserviceService {
     return this.http.delete(`${baseUrl}/${path}/${userId}`);
   }
 
+
+  public getUserById(userId) {
+    var path = 'getUserById';
+    return this.http.get(`${baseUrl}/${path}/${userId}`);
+  }
+
+
   //editUser
   public updateUser(data) {
     var path = 'editUser';
     var dataString = JSON.parse(JSON.stringify(data || null));
     return this.http.put(`${baseUrl}/${path}`, dataString);
   }
-
-  //Aashray work.(Below are working methods. )
 
   //assign course button
   public getCourse() {
