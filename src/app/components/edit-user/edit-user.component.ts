@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpserviceService } from 'src/app/services/httpservice.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { formatDate } from '@angular/common';
 
-// export class User {
+// class User {
 //   constructor(
 //     public userId: number,
-//     public userName: string
+//     public userName: string,
+//     public creation_date: string
 //   ) { }
 // }
 
@@ -32,6 +33,7 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
+  private _route: Router;
 
   constructor(private httpService: HttpserviceService,private route: ActivatedRoute) { 
     this.id = this.route.snapshot.params.id;
@@ -136,6 +138,16 @@ export class EditUserComponent implements OnInit {
         })
       }
    
+      update(){
+        var user = {
+          userId : this.userId,
+          userName: this.userName,
+          creation_date: this.cValue.toString()
+        }
+        this.httpService.updateUser(user).subscribe((res) =>{
+          this._route.navigate(['/user']);
+        })
+      }
 
 
 }
