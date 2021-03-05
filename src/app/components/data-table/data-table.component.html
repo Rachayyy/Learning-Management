@@ -21,9 +21,9 @@
             <tr *ngFor="let i of val[0]">
                 <td>{{ i.courseId }}</td>
                 <td>{{ i.courseName}}</td>
-                <td><button type="button" class="btn-btn-primary"><i class="far fa-eye">Hide</i></button>
+                <td><button type="button" class="btn-btn-primary"><i class="far fa-eye" (click)="hideRow(i.courseId)">Hide</i></button>
                     <button type="button" class="btn-btn-success"><i class="far fa-edit">Edit</i></button>
-                    <button type="button" class="btn-btn-danger"><i class="far fa-trash-alt">Delete</i></button></td>
+                    <button type="button" class="btn-btn-danger"><i class="far fa-trash-alt" (click) = "deleteRow(i.courseId)">Delete</i></button></td>
             </tr>
             <!-- <tr>
                 <td>1,002</td>

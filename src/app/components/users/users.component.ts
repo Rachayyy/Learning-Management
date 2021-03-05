@@ -23,4 +23,13 @@ export class UsersComponent implements OnInit {
        console.log("ok");
      }, err => console.log("faild"));
  }
+ hideRow(id){
+   for(let i = 0; i<this.val[0].length; ++i)
+   {
+     if(this.val[0][i].userId === id){
+       this.val[0].splice(i,1);
+     }
+   }
+ }
 }
+

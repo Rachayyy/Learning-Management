@@ -39,18 +39,29 @@ export class DataTableComponent implements OnInit {
   getAllCourse() {
 
     //use this method
-    this.httpService.getAllCourseDetails().subscribe(res=> {
+    this.httpService.getAllCourseDetails().subscribe((res)=> {
       console.log(res);
+      this.course = Object.values(res);
+      this.val = Object.values(this.course);
     })
-
-
+    
+  }
+  hideRow(id){
+    for(let i = 0; i<this.val[0].length; ++i)
+    {
+      if(this.val[0][i].courseId === id){
+        this.val[0].splice(i,1);
+      }
+    }
+  }
+ 
     // this.httpService.getCourse().subscribe((res) => {
     //   this.course = Object.values(res);
     //   this.val = Object.values(this.course);
     //   if(res)
     //   console.log("ok");
     // }, err => console.log("faild"));
-  }
+
 
 
 
