@@ -54,6 +54,18 @@ export class DataTableComponent implements OnInit {
       }
     }
   }
+
+  deleteRow(id){
+    for(let i = 0; i<this.val[0].length; ++i)
+    {
+      if(this.val[0][i].courseId === id){
+        this.httpService.deleteCourseById(id).subscribe((res) =>{
+          alert("Course Deleted");
+          this.getAllCourse();
+        })
+      }
+    }
+  }
  
     // this.httpService.getCourse().subscribe((res) => {
     //   this.course = Object.values(res);

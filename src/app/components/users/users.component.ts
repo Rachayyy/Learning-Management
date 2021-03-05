@@ -34,8 +34,10 @@ export class UsersComponent implements OnInit {
   }
 
   getAllUsers() {
-    this.httpService.getAllUserDetails().subscribe(res=> {
+    this.httpService.getAllUserDetails().subscribe((res)=> {
       console.log(res);
+      this.user = Object.values(res);
+    this.val = Object.values(this.user);
     });
     // this.httpService.getUser().subscribe((res) => {
     //   this.user = Object.values(res);
@@ -66,5 +68,20 @@ export class UsersComponent implements OnInit {
      }
    }
  }
+ deleteRow(id){
+  for(let i = 0; i<this.val[0].length; ++i)
+  {
+    if(this.val[0][i].userId === id){
+      this.httpService.deleteUserById(id).subscribe((res) =>{
+        alert("User Deleted");
+        this.getAllUsers();
+      })
+    }
+  }
 }
+
+
+
+}
+
 

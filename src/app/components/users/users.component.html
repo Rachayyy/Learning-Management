@@ -23,7 +23,7 @@
                 <td>{{ i.userName}}</td>
                 <td><button type="button" class="btn-btn-primary" (click)="hideRow(i.userId)"><i class="far fa-eye">Hide</i></button>
                     <button type="button" class="btn-btn-success"><i class="far fa-edit">Edit</i></button>
-                    <button type="button" class="btn-btn-danger"><i class="far fa-trash-alt">Delete</i></button></td>
+                    <button type="button" class="btn-btn-danger"><i class="far fa-trash-alt" (click)="deleteRow(i.userId)">Delete</i></button></td>
             </tr>
             <!-- <tr>
                 <td>1,002</td>
