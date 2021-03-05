@@ -24,6 +24,30 @@ export class HttpserviceService {
     return this.http.get(`${baseUrl}/${username}`);
   }
 
+  //use these methods for user and course work
+
+  //all course details
+  public getAllCourseDetails() {
+    var path = 'getAllCourseDetails';
+    return this.http.get(`${baseUrl}/${path}`).pipe(map(res => {
+      return res;
+    }))
+  }
+
+  //delete course from db
+  public deleteCourseById(courseId) {
+    var path = 'deleteCourseById';
+    return this.http.delete(`${baseUrl}/${path}/${courseId}`);
+  }
+
+  //editCourseTitle
+  public updateCourseTitle(data) {
+    var path = 'editTitleOfCourse';
+    var dataString = JSON.parse(JSON.stringify(data || null));
+    return this.http.put(`${baseUrl}/${path}`, dataString);
+  }
+
+
   //Aashray work.(Below are working methods. )
 
   //assign course button
@@ -59,7 +83,11 @@ export class HttpserviceService {
     return this.http.put(`${baseUrl}/${path}/${data.userId}/${data.courseCode}`, dataString);
   }
 
-  
+  public validateLogin(data) {
+      var path = 'validateLogin';
+      var dataString = JSON.parse(JSON.stringify(data || null));
+      return this.http.post(`${baseUrl}/${path}`, dataString);
+  }
   
 
 }

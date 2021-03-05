@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpserviceService } from 'src/app/services/httpservice.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private httpService: HttpserviceService
   ) { }
 
    public userName: string;
@@ -20,7 +22,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
    
-  LoginUser(){
+  public LoginUser(){
+    // var login = {
+    //   username: this.userName,
+    //   password: this.pass,
+    //   userType: this.value
+    // }
+    // this.httpService.validateLogin(login).subscribe(response => {
+    //   console.log(response);
+    // });
     console.log(this.userName + " " + this.pass + " " + this.value)
     if (this.value == "admin"){
      if(this.userName == "Admin" && this.pass == "1234"){
