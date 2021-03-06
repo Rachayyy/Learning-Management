@@ -14,23 +14,7 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllUsers();
-    // var data = {
-    //   userId: 4,
-    //   userName: "Abhay Mishra",
-    //   creationDate: new Date(),
-    //   password: "xyzqladm",
-    //   userType: "User"
-    // }
-    // this.addUser(data);
-
-    // this.httpService.deleteUserById(5).subscribe(res=> {
-    //   console.log(res);
-    // });
-
-    // this.httpService.updateUser(data).subscribe(res=> {
-    //   console.log(res);
-    // })
-    
+   
   }
 
   getAllUsers() {
@@ -39,37 +23,10 @@ export class UsersComponent implements OnInit {
       this.user = Object.values(res);
     this.val = Object.values(this.user);
     });
-    // this.httpService.getUser().subscribe((res) => {
-    //   this.user = Object.values(res);
-    //   this.val = Object.values(this.user);
-    //   if (res)
-    //     console.log("ok");
-    // }, err => console.log("faild"));
+    
   }
 
-  addUser(data) {
-    this.httpService.addNewUser(data).subscribe(res => {
-      console.log(res);
-    })
-  }
-//  getAllUsers(){
-//      this.httpService.getUser().subscribe((res) => {
-//        this.user = Object.values(res);
-//       this.val = Object.values(this.user);
-//        if(res)
-//        console.log("ok");
-//      }, err => console.log("faild"));
-//  }
- viewRow(id){
-   for(let i = 0; i<this.val[0].length; ++i)
-   {
-     if(this.val[0][i].userId === id){
-       this.httpService.getUserById(id).subscribe((res) =>{
-        alert("User Deleted");
-       })
-     }
-   }
- }
+
  deleteRow(id){
   for(let i = 0; i<this.val[0].length; ++i)
   {

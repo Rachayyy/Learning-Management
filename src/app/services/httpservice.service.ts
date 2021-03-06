@@ -68,6 +68,10 @@ export class HttpserviceService {
     return this.http.get(`${baseUrl}/${path}/${userId}`);
   }
 
+  public getUserCourses(userId) {
+    var path = 'getUserCourses';
+    return this.http.get(`${baseUrl}/${path}/${userId}`);
+  }
 
   //editUser
   public updateUser(data) {

@@ -33,9 +33,9 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-  private _route: Router;
+  
 
-  constructor(private httpService: HttpserviceService,private route: ActivatedRoute) { 
+  constructor(private httpService: HttpserviceService,private route: ActivatedRoute,private router: Router) { 
     this.id = this.route.snapshot.params.id;
     
   }
@@ -145,7 +145,7 @@ export class EditUserComponent implements OnInit {
           creation_date: this.cValue.toString()
         }
         this.httpService.updateUser(user).subscribe((res) =>{
-          this._route.navigate(['/user']);
+          this.router.navigate(['/users']);
         })
       }
 
