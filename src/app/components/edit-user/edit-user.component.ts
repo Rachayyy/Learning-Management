@@ -49,17 +49,6 @@ export class EditUserComponent implements OnInit {
   public userName: string ;
   public createDate: Date = new Date();
   public cValue = formatDate(this.createDate, 'yyyy-MM-dd', 'en-US');
-  // public courseName: string ;
-  // public courseCode: number;
-
-
-  // course: Course[] = [];
-  // user1: User[] = [];
-  // userCourses: UserCourses;
-
-  // isEdited: boolean = false;
-  // message: string = "";
-
 
   ngOnInit(): void {
   //   this.sub = this.route.params.subscribe((params:Params) => {
@@ -70,63 +59,6 @@ export class EditUserComponent implements OnInit {
   //console.log(this.id);
 }
 
-  
-  // getAllCourse() {
-  //   this.httpService.getCourse().subscribe(result => {
-  //     var i = 0;
-  //     for (var k in result["course"]) {
-  //       // console.log(result["course"][k])
-  //       this.course[i] = new Course(result["course"][k]["courseId"], result["course"][k]["courseName"]);
-  //       // console.log(this.course[i]);
-  //       ++i;
-  //     }
-  //     this.courseName = this.course[0]["courseName"];
-  //   })
-  // }
-
-  // getAllUser() {
-  //   this.httpService.getUser().subscribe(result => {
-  //     var i = 0;
-  //     for (var k in result["user"]) {
-  //       this.user[i] = new User(result["user"][k]["userId"], result["user"][k]["userName"]);
-  //       ++i;
-  //     }
-  //     this.userName = this.user[0]["userName"];
-  //   })
-  // }
-
-  // onCourseSelected() {
-  //   // console.log(this.courseCode)
-  //   for (var k in this.course) {
-  //     // console.log(typeof this.course[k]["courseCode"])
-  //     // console.log(this.course[k]["courseCode"]);
-  //     if (this.course[k]["courseCode"] == this.courseCode) {
-  //       this.courseName = this.course[k]["courseName"];
-  //       break;
-  //     }
-  //   }
-  // }
-
-  // onUserSelected() {
-  //   // console.log(this.courseCode)
-  //   for (var k in this.user) {
-  //     if (this.user[k]["userId"] == this.userId) {
-  //       this.userName = this.user[k]["userName"];
-  //       break;
-  //     }
-  //   }
-  // }
-
-  // EditUser() {
-  //   // console.log(this.user.userId + " " + this.user.userName + " " + this.user.createDate + " " + this.courseCode + " " + this.courseName)
-  //   this.userCourses = new UserCourses(this.userId, this.userName, this.courseCode, this.courseName);
-  //   this.httpService.update(this.userCourses).subscribe(response => {
-  //     // console.log(response);
-  //     this.isEdited = true;
-  //     this.message = response["message"]
-  //     console.log(response)
-  //   })
-  // }
   viewRow(id){
         this.httpService.getUserById(id).subscribe((res) =>{
          //alert("User Viewed");

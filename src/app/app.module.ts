@@ -25,6 +25,7 @@ import { CreditLogsComponent } from './components/credit-logs/credit-logs.compon
 import { MycoursesComponent } from './components/mycourses/mycourses.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ViewUserComponent } from './components/view-user/view-user.component';
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ViewUserComponent } from './components/view-user/view-user.component';
     CreditLogsComponent,
     MycoursesComponent,
     EditUserComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    EditCourseComponent
   ],
   imports: [
     BrowserModule,

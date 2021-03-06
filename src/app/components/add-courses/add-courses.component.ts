@@ -26,7 +26,7 @@ export class AddCoursesComponent implements OnInit {
   constructor(private httpService: HttpserviceService) { }
 
   courseId: number = 1;
-  courseName: string = "Aashray";
+  courseName: string = "Python";
   courseCode: number = 101;
   document: File = null;
   isAdded: boolean = false;

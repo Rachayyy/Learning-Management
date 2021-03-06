@@ -22,14 +22,14 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="code">New Course Code:</label>
+                    <label for="code">Course Code:</label>
                     <input type="text" class="form-control" id="code" placeholder="Enter course code" name="code"
                         required="required" [(ngModel)]="course.courseCode" #code="ngModel">
                     <div [hidden]="code.valid || code.pristine" class="alert alert-danger">Subject code is required</div>
 
                 </div>
                 <div class="form-group">
-                    <label for="username">New Course Name:</label>
+                    <label for="username">Course Name:</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter course name" name="name"
                         required="required" [(ngModel)]="course.courseName" #name="ngModel">
                         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Course name is required</div>
