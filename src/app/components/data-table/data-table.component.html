@@ -7,9 +7,9 @@
              <!-- <app-data-table></app-data-table>  -->
              
             <app-menu-bar></app-menu-bar>
-            <form class="navbar-form navbar-right" (ngSubmit) = "searchcourse()">
-                <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="search" id="search">
-                <button type="submit" >Search</button>
+            <form class="navbar-form navbar-right" >
+                <input type="text" class="form-control" placeholder="Search..." #search id="search">
+                <button type="submit" (click) = "searchcourse(search.value)" >Search</button>
             </form><br><br>
 <button routerLink="/dashboard" class="btn btn-primary">Back</button>
 <div class="table-responsive">

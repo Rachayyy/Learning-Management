@@ -11,7 +11,7 @@ export class DataTableComponent implements OnInit {
   constructor(private httpService: HttpserviceService) { }
   course = [];
   val = [];
-  search: string;
+ 
 
   ngOnInit(): void {
     this.getAllCourse();
@@ -21,7 +21,7 @@ export class DataTableComponent implements OnInit {
 
     //use this method
     this.httpService.getAllCourseDetails().subscribe((res)=> {
-      console.log(res);
+      //console.log(res);
       this.course = Object.values(res);
       this.val = Object.values(this.course);
     })
@@ -48,8 +48,13 @@ export class DataTableComponent implements OnInit {
     }
   }
 
-  searchcourse(){
-    alert(this.search);
+  searchcourse(search){
+    //alert(search);
+    this.httpService.searchCourse(search).subscribe((res) =>{
+      console.log(res)
+      this.course = Object.values(res);
+      this.val = Object.values(this.course);
+    })
   }
 
 
